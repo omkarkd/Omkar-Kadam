@@ -4,6 +4,7 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 import requests
 from streamlit_lottie import st_lottie
+from streamlit_timeline import st_timeline
 
 
 
@@ -88,7 +89,7 @@ cols = st.columns(len(SOCIAL_MEDIA))
 for index, (platform, link) in enumerate(SOCIAL_MEDIA.items()):
     cols[index].write(f"[{platform}]({link})")
 
-# --- EXPERIENCE & QUALIFICATIONS ---
+
 exp_col, skills_col = st.columns(2)
 
 with exp_col:
@@ -118,29 +119,31 @@ with skills_col:
         - 🧠📚 NLP: Word2vec, Gensim, Semantic Analysis, Spacy, NER (Named Entity Recognition), .
         - ☁️ Cloud: Docker, Azure, Google Cloud Platform (GCP).
         - LLM: Gemini ai, Prompt Engineering, OpenAI, Langchain
-        - 🧰🛠️ Others: Git, Microsoft Excel, Text ranking algorithm, Semantic Analysis, Elastic-search, , .
+        - 🧰🛠️ Others: Git, Microsoft Excel, Text ranking algorithm, Semantic Analysis, Elastic-search.
         """
     )
 
 # --- Projects & Accomplishments ---
 # st.write('\n')
-st.subheader("Projects & Accomplishments")
+st.subheader("Projects")
 st.write("---")
 for project in PROJECTS:
-    st.write(f"[{project}]")
+    st.write(f"{project}")
 
 st.write('\n')
 
+
 # --- WORK HISTORY ---
-st.subheader("Work History")
 st.write("---")
 with st.container():
     selected = option_menu(
         menu_title=None,
-        options=["Employment Journey","Teaching Journey","Contact"],
-        icons=['person','bi-person-check-fill','chat-left-text-fill'],
+        options=["Employment Journey","Teaching Journey","Education","Contact"],
+        icons=['bi-person-workspace','bi-person-check-fill',"bi-mortarboard-fill",'chat-left-text-fill'],
         orientation = "horizontal"
     )
+
+
 if selected == "Employment Journey":
         
         st.write("🚧", "**Data Science Consultant | Naviya Technologies**")
@@ -190,23 +193,72 @@ if selected == "Employment Journey":
         )
 
 
+if selected == "Teaching Journey":
+        
+        st.write("**Technology Trainer | Ramachandran International Institute of Management**")
+        st.write("20/10/23 - 10/11/23")
+        st.write(
+            """
+        - 📊 Taught PowerBI and Tableau, empowering professionals with skills in creating impactful visualizations, including chart creation, calculated fields, parameterization, and dashboard development.
+        - 🐍 Shared proficiency in Python's data analysis tools—NumPy, Pandas, Matplotlib, and Seaborn—enabling participants to understand, solve business analytics use cases, and derive valuable insights.
+        - 🔧 Equipped learners with the ability to navigate complex data scenarios, fostering a deep understanding of generating insights and building dashboards for informed decision-making.
+        - 🏆 Recognized for delivering comprehensive training that bridges theory and practical application, empowering professionals to excel in the realm of data analysis.
+        """
+        )
+
+        st.write("\n")
+        st.write("**Technology Trainer | Ramachandran International Institute of Management**")
+        st.write("20/10/23 - 10/11/23")
+        st.write(
+            """
+        - 🚀 Ignited Minds with Generative AI Magic: 
+            - Unleashed the wonders of Generative Adversarial Networks (GANs) and GPT models in dynamic training sessions.
+            - Transformed theory into action, guiding students to wield and tweak GPT models for project success.
+        - 🎓 Crafting GPT Wizards:
+            - Orchestrated an enchanting learning experience, empowering students to master the art of GPT model manipulation.
+            - Fostered a creative atmosphere, ensuring each student could sculpt and mold GPT models to fit the unique contours of their projects.
+        
+        """
+        )
+
+
+
+
+if selected == "Education":
+    items = [
+            {"id": 1, "content": "🏫 Msc (Data Science and Big Data Analytics)", "start": "2019-07-01" , "Key Highlights":["Ranked among top 3 in best Projects.", 
+             "Published a Research Paper in IJERT.","Attended Scipy event at IIT Bombay"]},
+            
+            {"id": 2, "content": "Completed Masters Journey", "start": "2021-10-20"},
+
+        ]
+
+    timeline = st_timeline(items, groups=[], options={}, height="300px")
+    if timeline:
+        st.subheader("Key Highlights:")
+
+        for event in timeline['Key Highlights']:
+             st.write(event)
+
+
 
 if selected == "Contact":
-        st.header("Get in touch!")
+        st.header(":mailbox: Get in touch!")
         st.write("##")  
         st.write("##")   
 
-        contact_form = """   
-        <form action="https://formsubmit.co/kadam.omkar05@gmail.com" method="POST">
-            <input type = "hidden" name="_captcha" value="false">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Mail"required>
-            <textarea name = "message", placeholder="your message" required>
-            <button type="submit">Send</button>
-        </form>
+        contact_form = """
+                <form action="https://formsubmit.co/kadam.omkar05@gmail.com" method="POST">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Mail" required>
+                    <textarea name="message" placeholder="your message here" required></textarea>
+                    <button type="submit"> Send </button>
+                </form>
+            """
 
 
-        """
+
         left_col,right_col = st.columns((2,1))
         with left_col:
              st.markdown(
