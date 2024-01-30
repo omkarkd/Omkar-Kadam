@@ -98,6 +98,7 @@ with exp_col:
     st.write(
         """
         - ✔️ Data Visualization: Transforming raw data into compelling visuals.
+
         - ✔️ Data Cleaning: Tidying up messy data for meaningful analysis.
         - ✔️ Model Fitting: Crafting data models for precise insights.
         - ✔️ Data Scraping/Extraction: Retrieving valuable information from the web.
@@ -113,6 +114,7 @@ with skills_col:
     st.write(
         """
         - 👩‍💻 Programming: Python(Flask, TensorFlow, Streamlit, CNN), SQL.
+
         - 📊 Data Visualization: Tableau, PowerBi, MS Excel, Chart.js, Plotly, D3.js.
         - 📚 Modeling: Clustering techniques, Classification techniques, Linear Regression, Forecasting models, XGBoost, Logistic regression, Decision trees,Machine Learning.
         - 🗄️ Databases: MongoDB, SQL, NoSQL.
@@ -147,7 +149,7 @@ with st.container():
 if selected == "Employment Journey":
         
         st.write("🚧", "**Data Science Consultant | Naviya Technologies**")
-        st.write("02/2020 - Present")
+        st.write("14/09/20 - 30/03/21")
         st.write(
             """
         - ► Responsible for Designing and Developing Data models in-line with Business Requirement.
@@ -158,7 +160,7 @@ if selected == "Employment Journey":
 
         st.write('\n')
         st.write("🚧", "**Consulting Data Analyst (Finance: Systems Team) | Zs-Associates**")
-        st.write("02/2020 - Present")
+        st.write("01/04/21 - 30/07/21")
         st.write(
             """
         - ► Identify areas for improvement in company finance processes.
@@ -171,7 +173,7 @@ if selected == "Employment Journey":
 
         st.write('\n')
         st.write("🚧", "**Data Scientist | Ilink Digital**")
-        st.write("02/2020 - Present")
+        st.write("01/08/21 - 27/02/22")
         st.write(
             """
         - ► Worked Closely with offshore End-Users, 
@@ -183,7 +185,7 @@ if selected == "Employment Journey":
 
         st.write('\n')
         st.write("🚧", "**Data Analyst(Product Development) | ZingHr**")
-        st.write("02/2020 - Present")
+        st.write("01/03/22 - 10/10/23")
         st.write(
             """
         - ► Led the implementation of a Resume and JD Similarity algorithm.
@@ -194,7 +196,18 @@ if selected == "Employment Journey":
 
 
 if selected == "Teaching Journey":
-        
+
+        st.write("**Visiting Faculty | MIT World Peace University**")
+        st.write("01/12/21 - 18/06/23")
+        st.write(
+            """
+        - ► Primary Technologies : Python, Machine Learning, Deep Learning, MongoDB, Cloudera, Hadoop, Spark, Hive, Pig, Cassandra, MapReduce, SQL.
+        - ► Held Responsible for conducting lecture for the above mentioned subjects (Practical and Theory).
+        - ► Experience in conducting lectures for Masters and Graduate Grade.
+        """
+        )
+
+        st.write("\n")
         st.write("**Technology Trainer | Ramachandran International Institute of Management**")
         st.write("20/10/23 - 10/11/23")
         st.write(
@@ -207,8 +220,8 @@ if selected == "Teaching Journey":
         )
 
         st.write("\n")
-        st.write("**Technology Trainer | Ramachandran International Institute of Management**")
-        st.write("20/10/23 - 10/11/23")
+        st.write("**Technology Trainer | Indian Institute of Technology, Hyderabad**")
+        st.write("15/11/23 - 30/11/23")
         st.write(
             """
         - 🚀 Ignited Minds with Generative AI Magic: 
@@ -218,6 +231,17 @@ if selected == "Teaching Journey":
             - Orchestrated an enchanting learning experience, empowering students to master the art of GPT model manipulation.
             - Fostered a creative atmosphere, ensuring each student could sculpt and mold GPT models to fit the unique contours of their projects.
         
+        """
+        )
+
+        st.write("\n")
+        st.write("**Workshop Trainer | Smt. Kashibai Navale College of Pharmacy**")
+        st.write("04/12/23 - 14/12/23")
+        st.write(
+            """
+        - ► Primary Technologies : Python, SQL, Tableau,Excel.
+        - ► Successfully Delivered a session in AI in HealthCare. 
+        - ► Demonstrated the importance of Visualisation in General and in HealthCare Domain
         """
         )
 
