@@ -35,6 +35,7 @@ streamlit==1.30.0
 streamlit-lottie==0.0.5
 streamlit-option-menu==0.3.12
 streamlit-vis-timeline==0.3.0
+streamlit-timeline
 tenacity==8.2.3
 toml==0.10.2
 toolz==0.12.1

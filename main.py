@@ -4,7 +4,7 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 import requests
 from streamlit_lottie import st_lottie
-from streamlit_timeline import st_timeline
+from streamlit_timeline import timeline
 
 
 
@@ -249,20 +249,53 @@ if selected == "Teaching Journey":
 
 
 if selected == "Education":
-    items = [
-            {"id": 1, "content": "🏫 Msc (Data Science and Big Data Analytics)", "start": "2019-07-01" , "Key Highlights":["Ranked among top 3 in best Projects.", 
-             "Published a Research Paper in IJERT.","Attended Scipy event at IIT Bombay"]},
+    data = {
+         "events":
+         [{
+              "start_date": {
+                                "year": "2019",
+                                "month":"7"
+                            },
+                "text": {
+                            "headline": "MSc Data Science and Big Data Analytics",
+                            "text": "<p>TimelineJS is a populair tool from Knightlab. It has been used by more than 250,000 people to tell stories seen hundreds of millions of times, and is available in more than sixty languages. </p>"
+                        }
+            },
+            {
+              "start_date": {
+                                "year": "2021",
+                                "month":"10"
+                            },
+                "text": {
+                            "headline": "Graduated",
+                            "text": "<p>TimelineJS is a populair tool from Knightlab. It has been used by more than 250,000 people to tell stories seen hundreds of millions of times, and is available in more than sixty languages. </p>"
+                        },
+                "background":"#0f9bd1"
+            }]
+    }
+
+
+
+
+
+
+    # items = [
+    #         {"id": 1, "content": "🏫 Msc (Data Science and Big Data Analytics)", "start": "2019-07-01" , "Key Highlights":["Ranked among top 3 in best Projects.", 
+    #          "Published a Research Paper in IJERT.","Attended Scipy event at IIT Bombay"]},
             
-            {"id": 2, "content": "Completed Masters Journey", "start": "2021-10-20"},
+    #         {"id": 2, "content": "Completed Masters Journey", "start": "2021-10-20"},
 
-        ]
+    #     ]
 
-    timeline = st_timeline(items, groups=[], options={}, height="300px")
-    if timeline:
-        st.subheader("Key Highlights:")
 
-        for event in timeline['Key Highlights']:
-             st.write(event)
+
+    # timeline = st_timeline(items, groups=[], options={}, height="300px")
+    timeline = timeline(data)
+    # if timeline:
+    #     st.subheader("Key Highlights:")
+
+    #     for event in timeline['Key Highlights']:
+    #          st.write(event)
 
 
 
